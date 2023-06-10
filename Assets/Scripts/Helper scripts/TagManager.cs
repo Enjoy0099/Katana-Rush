@@ -7,7 +7,7 @@ public static class TagManager
     public static string RUN_ANIMATION_PARAMETER = "Run";
 
 
-
+    public static string PLAYER_TAG = "Player";
 
 
 }
