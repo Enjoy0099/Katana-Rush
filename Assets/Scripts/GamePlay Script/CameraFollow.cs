@@ -20,7 +20,7 @@ public class CameraFollow : MonoBehaviour
         playerPos = GameObject.FindWithTag(TagManager.PLAYER_TAG).transform;
     }
 
-    private void Update()
+    private void LateUpdate()
     {
         FollowPlayer();
     }
