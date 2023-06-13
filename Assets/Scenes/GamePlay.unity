@@ -1303,12 +1303,49 @@ PrefabInstance:
       propertyPath: m_Name
       value: Samurai
       objectReference: {fileID: 0}
-    - target: {fileID: 155570126807797223, guid: dfedee63dd80e7e40a79b0423239cb96, type: 3}
-      propertyPath: m_TagString
-      value: Player
+    - target: {fileID: 155570126807797228, guid: dfedee63dd80e7e40a79b0423239cb96, type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 155570126807797228, guid: dfedee63dd80e7e40a79b0423239cb96, type: 3}
+      propertyPath: m_GravityScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 155570126807797229, guid: dfedee63dd80e7e40a79b0423239cb96, type: 3}
+      propertyPath: m_Size.x
+      value: 0.08208585
+      objectReference: {fileID: 0}
+    - target: {fileID: 155570126807797229, guid: dfedee63dd80e7e40a79b0423239cb96, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.012341261
+      objectReference: {fileID: 0}
+    - target: {fileID: 155570126807797231, guid: dfedee63dd80e7e40a79b0423239cb96, type: 3}
+      propertyPath: jumpForce
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 155570126807797231, guid: dfedee63dd80e7e40a79b0423239cb96, type: 3}
+      propertyPath: groundLayer.m_Bits
+      value: 64
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dfedee63dd80e7e40a79b0423239cb96, type: 3}
+--- !u!1 &155570127794653525 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 155570126807797223, guid: dfedee63dd80e7e40a79b0423239cb96, type: 3}
+  m_PrefabInstance: {fileID: 155570127794653524}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &155570127794653526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 155570127794653525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f964d002c3335f9479f17df21f10c6bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2380669779784650707
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1493,18 +1530,6 @@ PrefabInstance:
     - target: {fileID: 4944387798721668802, guid: d03b5359c0d2c2947bb7f38d3ba8bc54, type: 3}
       propertyPath: m_Name
       value: Ground
-      objectReference: {fileID: 0}
-    - target: {fileID: 4944387798721668803, guid: d03b5359c0d2c2947bb7f38d3ba8bc54, type: 3}
-      propertyPath: m_Color.b
-      value: 0.56037736
-      objectReference: {fileID: 0}
-    - target: {fileID: 4944387798721668803, guid: d03b5359c0d2c2947bb7f38d3ba8bc54, type: 3}
-      propertyPath: m_Color.g
-      value: 0.56037736
-      objectReference: {fileID: 0}
-    - target: {fileID: 4944387798721668803, guid: d03b5359c0d2c2947bb7f38d3ba8bc54, type: 3}
-      propertyPath: m_Color.r
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d03b5359c0d2c2947bb7f38d3ba8bc54, type: 3}
