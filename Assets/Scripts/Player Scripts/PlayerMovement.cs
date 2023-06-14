@@ -16,6 +16,11 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private LayerMask groundLayer;
 
+    [SerializeField] private float attackWaitTime = 0.5f;
+
+    private float attackTimer;
+    private bool canAttack;
+
     private void Awake()
     {
         mybody = GetComponent<Rigidbody2D>();
@@ -27,7 +32,9 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     { 
         PlayerJump();
-        AnimatePlayer(); 
+        AnimatePlayer();
+        GetAttackInput();
+        HandleAttackAction();
     }
 
     private void FixedUpdate()
@@ -61,5 +68,27 @@ public class PlayerMovement : MonoBehaviour
     {
         playerAnim.PlayJump(mybody.velocity.y);
         playerAnim.PlayFromJumpToRunning(IsGrounded());
+    }
+
+
+    void GetAttackInput()
+    {
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            if (Time.time > attackTimer)
+            {
+                attackTimer = Time.time + attackWaitTime;
+                canAttack = true;
+            }
+        }
+    }
+
+    void HandleAttackAction()
+    {
+        if (canAttack && IsGrounded())
+        {
+            canAttack = false;
+            playerAnim.PlayAttack();
+        }
     }
 }

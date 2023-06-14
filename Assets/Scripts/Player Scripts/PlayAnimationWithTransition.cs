@@ -25,4 +25,6 @@ public class PlayAnimationWithTransition : MonoBehaviour
     {
         anim.SetTrigger(TagManager.ATTACK_ANIMATION_PARAMETER);
     }
+
+    
 }
