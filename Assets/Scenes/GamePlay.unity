@@ -1312,18 +1312,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1505485399, guid: e343582220ba65b45a855f1055d47cbe, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1505485400, guid: e343582220ba65b45a855f1055d47cbe, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 1505485402, guid: e343582220ba65b45a855f1055d47cbe, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 430284540742966933, guid: e343582220ba65b45a855f1055d47cbe, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -1371,10 +1359,6 @@ PrefabInstance:
     - target: {fileID: 430284540742967019, guid: e343582220ba65b45a855f1055d47cbe, type: 3}
       propertyPath: m_Name
       value: Wizard
-      objectReference: {fileID: 0}
-    - target: {fileID: 430284542481045910, guid: e343582220ba65b45a855f1055d47cbe, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e343582220ba65b45a855f1055d47cbe, type: 3}
