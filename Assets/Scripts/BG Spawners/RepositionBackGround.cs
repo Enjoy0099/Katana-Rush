@@ -45,5 +45,11 @@ public class RepositionBackGround : MonoBehaviour
             newPosition.x = newXPos;
             collision.transform.position = newPosition;
         }
+
+        if(collision.CompareTag(TagManager.ENEMY_TAG) || collision.CompareTag(TagManager.OBSTACLE_TAG)
+            || collision.CompareTag(TagManager.HEALTH_TAG))
+        {
+            collision.gameObject.SetActive(false);
+        }
     }
 }

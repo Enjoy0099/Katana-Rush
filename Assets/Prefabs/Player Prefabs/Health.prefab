@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5827616160749958433
+--- !u!1 &1933531823231183307
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,40 +8,38 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5827616160749958436}
-  - component: {fileID: 5827616160749958437}
-  - component: {fileID: 5827616160749958434}
-  - component: {fileID: 5827616160749958435}
-  - component: {fileID: 5827616160749958432}
+  - component: {fileID: 1933531823231183317}
+  - component: {fileID: 1933531823231183306}
+  - component: {fileID: 1933531823231183316}
   m_Layer: 0
-  m_Name: Blade 1
-  m_TagString: Obstacle
+  m_Name: Health
+  m_TagString: Health
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5827616160749958436
+--- !u!4 &1933531823231183317
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5827616160749958433}
+  m_GameObject: {fileID: 1933531823231183307}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.2, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &5827616160749958437
+--- !u!212 &1933531823231183306
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5827616160749958433}
+  m_GameObject: {fileID: 1933531823231183307}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -73,27 +71,27 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 2069300149
-  m_SortingLayer: 3
+  m_SortingLayerID: -975164971
+  m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1499846040, guid: 21edb22ef2a34f64397cc86d355eeca1, type: 3}
+  m_Sprite: {fileID: -1592431636, guid: 1690a9c16a00cb64990f25ef3fcbd6c6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.32, y: 0.32}
+  m_Size: {x: 0.13, y: 0.12}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &5827616160749958434
-CircleCollider2D:
+--- !u!61 &1933531823231183316
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5827616160749958433}
+  m_GameObject: {fileID: 1933531823231183307}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -101,36 +99,15 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.13, y: 0.12}
+    newSize: {x: 0.13, y: 0.12}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Radius: 0.1
---- !u!114 &5827616160749958435
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5827616160749958433}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38b52fb7fc4175643a0d45e1e6748c47, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  deactivateGameObject: 1
---- !u!114 &5827616160749958432
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5827616160749958433}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45099929647e3ac41b19762cd33bab6b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotateSpeed: 300
-  X: 0
-  Y: 0
-  Z: 1
-  minXRotation: 0
-  maxXRotation: 0
+  m_Size: {x: 0.13, y: 0.12}
+  m_EdgeRadius: 0

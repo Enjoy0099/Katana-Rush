@@ -10,8 +10,6 @@ public class DealDamage : MonoBehaviour
     {
         if(collision.CompareTag(TagManager.PLAYER_TAG))
         {
-
-            Debug.Log("Deal Damage To Player");
              
             if (deactivateGameObject)
             {
@@ -21,7 +19,7 @@ public class DealDamage : MonoBehaviour
 
         if(collision.CompareTag(TagManager.ENEMY_TAG) || collision.CompareTag(TagManager.OBSTACLE_TAG)) 
         {
-            Debug.Log("Deal Damage To Enemy");
+            
         }
     }
 }
