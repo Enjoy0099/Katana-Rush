@@ -3734,6 +3734,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Samurai
       objectReference: {fileID: 0}
+    - target: {fileID: 1480809621378543500, guid: dfedee63dd80e7e40a79b0423239cb96, type: 3}
+      propertyPath: healthBars.Array.data[0]
+      value: 
+      objectReference: {fileID: 782427125}
+    - target: {fileID: 1480809621378543500, guid: dfedee63dd80e7e40a79b0423239cb96, type: 3}
+      propertyPath: healthBars.Array.data[1]
+      value: 
+      objectReference: {fileID: 1509447244}
+    - target: {fileID: 1480809621378543500, guid: dfedee63dd80e7e40a79b0423239cb96, type: 3}
+      propertyPath: healthBars.Array.data[2]
+      value: 
+      objectReference: {fileID: 123897761}
+    - target: {fileID: 1480809621378543500, guid: dfedee63dd80e7e40a79b0423239cb96, type: 3}
+      propertyPath: healthBars.Array.data[3]
+      value: 
+      objectReference: {fileID: 920748619}
+    - target: {fileID: 1480809621378543500, guid: dfedee63dd80e7e40a79b0423239cb96, type: 3}
+      propertyPath: healthBars.Array.data[4]
+      value: 
+      objectReference: {fileID: 1593129749}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dfedee63dd80e7e40a79b0423239cb96, type: 3}
 --- !u!1001 &2380669779784650707

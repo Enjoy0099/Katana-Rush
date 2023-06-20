@@ -10,7 +10,9 @@ public class DealDamage : MonoBehaviour
     {
         if(collision.CompareTag(TagManager.PLAYER_TAG))
         {
-             
+
+            collision.GetComponent<PlayerHealth>().SubtractHealth();
+
             if (deactivateGameObject)
             {
                 gameObject.SetActive(false);
@@ -19,7 +21,7 @@ public class DealDamage : MonoBehaviour
 
         if(collision.CompareTag(TagManager.ENEMY_TAG) || collision.CompareTag(TagManager.OBSTACLE_TAG)) 
         {
-            
+            collision.GetComponent<EnemyHealth>().TakeDamage();
         }
     }
 }

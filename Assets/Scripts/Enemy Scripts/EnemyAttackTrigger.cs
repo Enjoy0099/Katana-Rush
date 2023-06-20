@@ -11,7 +11,7 @@ public class EnemyAttackTrigger : MonoBehaviour
         enemyAnim = GetComponentInParent<EnemyAnimation>();
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.CompareTag(TagManager.PLAYER_TAG))
         {
