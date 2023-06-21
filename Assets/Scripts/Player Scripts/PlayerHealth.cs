@@ -19,27 +19,23 @@ public class PlayerHealth : MonoBehaviour
 
     public void SubtractHealth()
     {
-        if (health <= 0)
-            return;
-
-        healthBars[currentHealthBarIndex].SetActive(false);
-
-        currentHealthBarIndex++;
-        
-        if (currentHealthBarIndex < (healthBars.Length))
-        {
-            healthBars[currentHealthBarIndex].SetActive(true);
-        }
-        
         health--;
 
         if (health <= 0)
         {
             // Game Over Panel
-
+            GameObject.FindWithTag(TagManager.GAMEPLAY_CONTROLLER_TAG).
+                                    GetComponent<GameOverController>().GameOverShowPanel();
 
             Destroy(gameObject);
         }
+        healthBars[currentHealthBarIndex].SetActive(false);
+
+        currentHealthBarIndex++;
+
+        if (currentHealthBarIndex <= (healthBars.Length - 1))
+            healthBars[currentHealthBarIndex].SetActive(true);
+        
     }
 
 
