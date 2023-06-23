@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9e1ca9d0e55537d40ba6f3c26a077e38
+guid: 72b383d75afe0884eb9b2f8a1bf1081a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -153,13 +153,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Logo 1_0
+      name: Selected Button_0
       rect:
         serializedVersion: 2
-        x: 17
-        y: 0
-        width: 56
-        height: 68
+        x: 6
+        y: 210
+        width: 78
+        height: 84
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -167,8 +167,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8bc9202a420e509479169e0ec61f4742
-      internalID: 1346422515
+      spriteID: 3d7a6bfb60085ee44b2ebe65dc6eee36
+      internalID: 980609784
       vertices: []
       indices: 
       edges: []
@@ -184,7 +184,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Logo 1_0: 1346422515
+      Selected Button_0: 980609784
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
