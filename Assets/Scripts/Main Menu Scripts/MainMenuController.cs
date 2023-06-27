@@ -21,6 +21,11 @@ public class MainMenuController : MonoBehaviour
 
     public void openCloseCharacterSelectMenu(bool open)
     {
+        if(open)
+        {
+            charSelectMenu.InitializeCharacterMenu();
+        }
+
         characterSelectMenuPanel.SetActive(open);
     }
 
@@ -29,6 +34,11 @@ public class MainMenuController : MonoBehaviour
         int selectedChar =
             int.Parse(UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.name);
 
+        GamePlayController.instance.selectedCharacter = selectedChar;
+
+        DataManager.SaveData(TagManager.SELECTED_CHARACTER_DATA, selectedChar);
+
+        charSelectMenu.InitializeCharacterMenu();
     }
 
 

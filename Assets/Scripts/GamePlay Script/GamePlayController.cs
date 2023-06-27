@@ -30,6 +30,8 @@ public class GamePlayController : MonoBehaviour
 
     private void Start()
     {
+
+
         //check if game is initialized
         int gameData = DataManager.GetData(TagManager.DATA_INITIALIZED);
 

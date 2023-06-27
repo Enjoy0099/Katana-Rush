@@ -2063,6 +2063,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6f5f25055e18c245927fc202a5ea40a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  charSelectButtons:
+  - {fileID: 1059021124}
+  - {fileID: 28650696}
+  - {fileID: 331164060}
+  selectedCharCheckbox:
+  - {fileID: 1853995628}
+  - {fileID: 1252166493}
+  - {fileID: 512373934}
 --- !u!1 &1853995628
 GameObject:
   m_ObjectHideFlags: 0
