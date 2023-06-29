@@ -26,7 +26,7 @@ public static class TagManager
     public static string RUN_ANIMATION_NAME = "Running";
 
     //scene name
-    public static string GAMEPLAY_SCENE_NAME = "Gameplay";
+    public static string GAMEPLAY_SCENE_NAME = "GamePlay";
     public static string MAIN_MENU_SCENE_NAME = "MainMenu";
 
     // character names (in gameplay scene)
@@ -38,6 +38,7 @@ public static class TagManager
     public static string CHARACTER_DATA = "Character";
     public static string SELECTED_CHARACTER_DATA = "Selected Character";
     public static string HIGHSCORE_DATA = "Highscore";
+    public static string HEALTH_BAR_HOLDER_TAG = "HealthBarHolder";
 
     // 0 data not initialized, 1 data initialized
     public static string DATA_INITIALIZED = "Data Initialized";

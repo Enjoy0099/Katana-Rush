@@ -1,6 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GamePlayController : MonoBehaviour
 {
@@ -35,7 +34,7 @@ public class GamePlayController : MonoBehaviour
         //check if game is initialized
         int gameData = DataManager.GetData(TagManager.DATA_INITIALIZED);
 
-        Debug.Log("Game data value: " + gameData);
+        /*Debug.Log("Game data value: " + gameData);*/
 
         if(gameData == 0 )
         {
@@ -60,5 +59,28 @@ public class GamePlayController : MonoBehaviour
     }
 
 
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode sceneMode)
+    {
+        
+        if(scene.name == TagManager.GAMEPLAY_SCENE_NAME)
+        {
+            Instantiate(player[selectedCharacter]);
+
+            Camera.main.GetComponent<CameraFollow>().PlayerRefernece();
+        }
+
+
+    }
 
 }

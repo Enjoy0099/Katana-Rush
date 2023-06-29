@@ -720,7 +720,10 @@ MonoBehaviour:
   selectedCharacter: 0
   char2UnlockScore: 10
   char3UnlockScore: 20
-  player: []
+  player:
+  - {fileID: 155570126807797223, guid: dfedee63dd80e7e40a79b0423239cb96, type: 3}
+  - {fileID: 3036734898194536983, guid: 75d0dd48d69a3414884ed6e2ec0100f3, type: 3}
+  - {fileID: 7323879469327963108, guid: d8d0d45e385153b4e87a18c952d12725, type: 3}
 --- !u!4 &273616951
 Transform:
   m_ObjectHideFlags: 0
@@ -1705,7 +1708,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1324449378
 RectTransform:
   m_ObjectHideFlags: 0

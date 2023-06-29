@@ -10,10 +10,10 @@ public class CameraFollow : MonoBehaviour
 
     private Vector3 tempPos;
 
-    private void Awake()
+    /*private void Awake()
     {
         PlayerRefernece();
-    }
+    }*/
 
     public void PlayerRefernece()
     {
