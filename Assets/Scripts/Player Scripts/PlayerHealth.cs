@@ -29,6 +29,9 @@ public class PlayerHealth : MonoBehaviour
 
         if (health <= 0)
         {
+
+            SoundManager.instance.Play_PlayerDeath_Sound();
+
             // Game Over Panel
             GameObject.FindWithTag(TagManager.GAMEPLAY_CONTROLLER_TAG).
                                     GetComponent<GameOverController>().GameOverShowPanel();
@@ -63,6 +66,8 @@ public class PlayerHealth : MonoBehaviour
     {
         if(collision.CompareTag(TagManager.HEALTH_TAG))
         {
+            SoundManager.instance.Play_Collectable_Sound();
+
             AddHealth();
 
             collision.gameObject.SetActive(false);

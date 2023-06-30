@@ -34,13 +34,21 @@ public class GameOverController : MonoBehaviour
 
     void DisplayScore()
     {
+        int highscore = DataManager.GetData(TagManager.HIGHSCORE_DATA);
+
+        if (scoreCounter.GetScore() > highscore)
+        {
+            DataManager.SaveData(TagManager.HIGHSCORE_DATA, scoreCounter.GetScore());
+        }
+
         currentScore.text = "Score: " + scoreCounter.GetScore() + "m";
+        bestScore.text = "Best: " + DataManager.GetData(TagManager.HIGHSCORE_DATA) + "m";
     }
 
 
     void CheckToUnlockNewCharacters(int score)
     {
-
+        GamePlayController.instance.CheckToUnlockCharacter(score);
     }
 
     public void RestartGame()

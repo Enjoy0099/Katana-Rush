@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -30,7 +31,6 @@ public class GamePlayController : MonoBehaviour
     private void Start()
     {
 
-
         //check if game is initialized
         int gameData = DataManager.GetData(TagManager.DATA_INITIALIZED);
 
@@ -58,7 +58,6 @@ public class GamePlayController : MonoBehaviour
 
     }
 
-
     private void OnEnable()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
@@ -75,12 +74,30 @@ public class GamePlayController : MonoBehaviour
         
         if(scene.name == TagManager.GAMEPLAY_SCENE_NAME)
         {
+            SoundManager.instance.PlayBGMusic(true);
+
             Instantiate(player[selectedCharacter]);
 
             Camera.main.GetComponent<CameraFollow>().PlayerRefernece();
         }
+        else
+        {
+            SoundManager.instance.PlayBGMusic(false);
+        }
+
+    }
 
 
+    public void CheckToUnlockCharacter(int score)
+    {
+        if(score > char3UnlockScore)
+        {
+            DataManager.SaveData(TagManager.CHARACTER_DATA + "1", 1);
+            DataManager.SaveData(TagManager.CHARACTER_DATA + "2", 1);
+        }
+
+        else if(score > char2UnlockScore)
+            DataManager.SaveData(TagManager.CHARACTER_DATA + "1", 1);
     }
 
 }
