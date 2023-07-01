@@ -16,6 +16,7 @@ public class EnemyAnimation : MonoBehaviour
     public void PlayAttack()
     {
         anim.SetTrigger(TagManager.ATTACK_TRIGGER_PARAMETER);
+        SoundManager.instance.Play_EnemyAttack_Sound();
     }
 
     public void PlayDeath()

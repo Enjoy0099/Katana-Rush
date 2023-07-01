@@ -25,12 +25,13 @@ public class PlayerHealth : MonoBehaviour
 
     public void SubtractHealth()
     {
+
         health--;
 
         if (health <= 0)
         {
 
-            SoundManager.instance.Play_PlayerDeath_Sound();
+            SoundManager.instance.Play_GameOver_Sound();
 
             // Game Over Panel
             GameObject.FindWithTag(TagManager.GAMEPLAY_CONTROLLER_TAG).
@@ -50,6 +51,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void AddHealth()
     {
+
         if (health == healthBars.Length)
             return;
 

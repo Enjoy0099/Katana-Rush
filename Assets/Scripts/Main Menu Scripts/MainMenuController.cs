@@ -13,6 +13,25 @@ public class MainMenuController : MonoBehaviour
 
     private CharacterSelectMenu charSelectMenu;
 
+    [SerializeField]
+    private Image musicImg;
+
+    [SerializeField]
+    private Sprite musicOnSprite, musicOffSprite;
+
+    private void Awake()
+    {
+        if(DataManager.GetData(TagManager.MUSIC_DATA) == 1)
+        {
+            musicImg.sprite = musicOnSprite;
+        }
+        else
+        {
+            musicImg.sprite = musicOffSprite;
+        }
+    }
+
+
     private void Start()
     {
         highScoreTxt.text = "HighScore: " + DataManager.GetData(TagManager.HIGHSCORE_DATA) + "m";
@@ -46,5 +65,23 @@ public class MainMenuController : MonoBehaviour
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene(TagManager.GAMEPLAY_SCENE_NAME);
     } 
+
+
+
+    public void TurnMusicOn_Off()
+    {
+        if (DataManager.GetData(TagManager.MUSIC_DATA) == 1)
+        {
+            DataManager.SaveData(TagManager.MUSIC_DATA, 0);
+            musicImg.sprite = musicOffSprite;
+            SoundManager.instance.StopBGMusic();    
+        }
+        else
+        {
+            DataManager.SaveData(TagManager.MUSIC_DATA, 1);
+            musicImg.sprite = musicOnSprite;
+            SoundManager.instance.PlayBGMusic(false);
+        }
+    }
 
 }

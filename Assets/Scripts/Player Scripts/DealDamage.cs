@@ -13,6 +13,8 @@ public class DealDamage : MonoBehaviour
 
             collision.GetComponent<PlayerHealth>().SubtractHealth();
 
+            SoundManager.instance.Play_PlayerDeath_Sound();
+
             if (deactivateGameObject)
             {
                 gameObject.SetActive(false);
@@ -21,7 +23,7 @@ public class DealDamage : MonoBehaviour
 
         if(collision.CompareTag(TagManager.ENEMY_TAG) || collision.CompareTag(TagManager.OBSTACLE_TAG)) 
         {
-            collision.GetComponent<EnemyHealth>().TakeDamage();
+            collision.GetComponent<EnemyHealth>().TakeDamage();  
         }
     }
 }

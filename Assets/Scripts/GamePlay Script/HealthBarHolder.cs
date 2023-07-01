@@ -7,8 +7,4 @@ public class HealthBarHolder : MonoBehaviour
 
     public GameObject[] healthBars;
 
-
-
-
-
 }

@@ -271,10 +271,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 1
   jumpForce: 4
+  increaseSpeed_After: 20
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
   attackWaitTime: 0.5
+  clipToControl: {fileID: 7400000, guid: cf4fe0d8bef1d164c9cad6eb4da7e2fa, type: 2}
 --- !u!114 &7323879469239211861
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,6 +1,5 @@
 using UnityEngine;
-
-
+using UnityEngine.SceneManagement;
 
 public class SoundManager : MonoBehaviour
 {
@@ -27,6 +26,30 @@ public class SoundManager : MonoBehaviour
         bgAudio = GetComponent<AudioSource>();
     }
 
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode sceneMode)
+    {
+        if(scene.name == TagManager.GAMEPLAY_SCENE_NAME)
+        {
+            if(DataManager.GetData(TagManager.MUSIC_DATA) == 1)
+                PlayBGMusic(true);
+        }
+        else
+        {
+            if (DataManager.GetData(TagManager.MUSIC_DATA) == 1)
+                PlayBGMusic(false);
+        }
+    }
+
 
     public void PlayBGMusic(bool gameplay)
     {
@@ -38,9 +61,14 @@ public class SoundManager : MonoBehaviour
         {
             bgAudio.clip = mainMenuMusic;
         }
-
+        
         bgAudio.Play();
 
+    }
+
+    public void StopBGMusic()
+    {
+        bgAudio.Stop();
     }
 
     public void Play_GameOver_Sound()

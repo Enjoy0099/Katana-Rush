@@ -10,7 +10,7 @@ public class GamePlayController : MonoBehaviour
     public int selectedCharacter = 0;
 
     [SerializeField]
-    private int char2UnlockScore = 10, char3UnlockScore = 20;
+    private int char2UnlockScore = 200, char3UnlockScore = 500;
 
     [SerializeField]
     private GameObject[] player;
@@ -30,6 +30,7 @@ public class GamePlayController : MonoBehaviour
 
     private void Start()
     {
+        PlayerPrefs.DeleteAll();
 
         //check if game is initialized
         int gameData = DataManager.GetData(TagManager.DATA_INITIALIZED);
@@ -38,12 +39,15 @@ public class GamePlayController : MonoBehaviour
 
         if(gameData == 0 )
         {
+
             // first time running the game, initialize data
             selectedCharacter = 0;
 
             DataManager.SaveData(TagManager.SELECTED_CHARACTER_DATA, selectedCharacter);
 
             DataManager.SaveData(TagManager.HIGHSCORE_DATA, 0);
+
+            DataManager.SaveData(TagManager.MUSIC_DATA, 1);
 
             DataManager.SaveData(TagManager.CHARACTER_DATA + "0", 1);
             DataManager.SaveData(TagManager.CHARACTER_DATA + "1", 0);
@@ -74,15 +78,15 @@ public class GamePlayController : MonoBehaviour
         
         if(scene.name == TagManager.GAMEPLAY_SCENE_NAME)
         {
-            SoundManager.instance.PlayBGMusic(true);
+            //SoundManager.instance.PlayBGMusic(true);
 
-            Instantiate(player[selectedCharacter]);
+            Instantiate(player[selectedCharacter]);     
 
             Camera.main.GetComponent<CameraFollow>().PlayerRefernece();
         }
         else
         {
-            SoundManager.instance.PlayBGMusic(false);
+            //SoundManager.instance.PlayBGMusic(false);
         }
 
     }
