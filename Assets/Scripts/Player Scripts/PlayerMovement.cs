@@ -8,8 +8,8 @@ public class PlayerMovement : MonoBehaviour
     private ScoreCounter scoreCounter;
 
     [SerializeField]
-    private float moveSpeed = 5f, jumpForce = 19f, increaseSpeed_After = 10f;
-    private float animSpeed = 0.01f, animSpeedThreshold = 0.15f;
+    private float moveSpeed = 5f, jumpForce = 19f;
+    private float animSpeedThreshold = 0.02f, animSpeed = 0.15f, increaseSpeed_After = 20f;
 
     private Rigidbody2D mybody;
 
@@ -23,11 +23,6 @@ public class PlayerMovement : MonoBehaviour
     private bool canAttack;
 
     private Animator animator;
-    public AnimationClip clipToControl;
-    private Animation animation_Run;
-
-    [SerializeField]
-    AnimationClip[] allClips;
 
     private void Awake()
     {
@@ -39,8 +34,11 @@ public class PlayerMovement : MonoBehaviour
         groundCheckPos = transform.GetChild(0).transform;
 
         animator = GetComponent<Animator>();
+    }
 
-        animation_Run = GetComponent<Animation>();
+    private void Start()
+    {
+        animator.SetFloat(TagManager.RUNSPEED_ANIMATION_PARAMETER, animSpeed);
     }
 
     private void Update()
@@ -52,12 +50,15 @@ public class PlayerMovement : MonoBehaviour
 
         if(scoreCounter.GetScore() > increaseSpeed_After)
         {
-            Debug.Log(animSpeedThreshold);
             moveSpeed += 0.2f;
-            increaseSpeed_After += 5f;
-            animSpeedThreshold += animSpeed;
+            increaseSpeed_After += 20f;
+            animSpeed += animSpeedThreshold;
 
-            allClips = animator.runtimeAnimatorController.animationClips;
+            animator.SetFloat(TagManager.RUNSPEED_ANIMATION_PARAMETER, animSpeed);
+
+            
+
+            /*allClips = animator.runtimeAnimatorController.animationClips;
 
             foreach (AnimationClip clip in allClips)
             {
@@ -67,7 +68,7 @@ public class PlayerMovement : MonoBehaviour
                     animation_Run.clip = clip;
                     break;
                 }
-            }
+            }*/
         }
     }
 

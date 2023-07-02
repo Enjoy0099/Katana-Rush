@@ -6,6 +6,7 @@ public static class TagManager
     public static string DEATH_ANIMATION_PARAMETER = "Death";
     public static string RUN_ANIMATION_PARAMETER = "Run";
     public static string ATTACK_TRIGGER_PARAMETER = "Attack Trigger";
+    public static string RUNSPEED_ANIMATION_PARAMETER = "Run_Speed";
 
 
     public static string PLAYER_TAG = "Player";

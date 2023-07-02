@@ -111,7 +111,6 @@ GameObject:
   - component: {fileID: 155570126807797231}
   - component: {fileID: 155570127794653526}
   - component: {fileID: 1480809621378543500}
-  - component: {fileID: 7071463767197096694}
   m_Layer: 10
   m_Name: Samurai
   m_TagString: Player
@@ -202,7 +201,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 46c3fef96770c1347a5a47a5363ac0ad, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 
@@ -287,13 +286,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 1
   jumpForce: 4
-  increaseSpeed_After: 5
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
   attackWaitTime: 0.5
-  clipToControl: {fileID: 7400000, guid: ec1a631cbd16e1448b6e1af16272f834, type: 2}
-  allClips: []
+  enemy_Animator: {fileID: 430284540742966928, guid: e343582220ba65b45a855f1055d47cbe, type: 3}
 --- !u!114 &155570127794653526
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -325,21 +322,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
---- !u!111 &7071463767197096694
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 155570126807797223}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 0}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!1 &6730395333706472258
 GameObject:
   m_ObjectHideFlags: 0

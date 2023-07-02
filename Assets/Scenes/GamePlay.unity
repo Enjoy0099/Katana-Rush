@@ -1394,7 +1394,7 @@ MonoBehaviour:
   initialObstaclesToSpawn: 10
   minHealthY: -0.72
   maxHealthY: -0.2
-  healthSpawnProbability: 7
+  healthSpawnProbability: 97
 --- !u!1 &761026386
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,6 +5,10 @@ using UnityEngine.PlayerLoop;
 
 public class ObstacleSpawnerPool : MonoBehaviour
 {
+
+    private ScoreCounter scoreCounter;
+    private float increaseSpeed_After = 20f;
+
     [SerializeField]
     private GameObject spikePrefab, swingingObstaclePrefab, wizardPrefab, healthPrefab;
 
@@ -45,17 +49,34 @@ public class ObstacleSpawnerPool : MonoBehaviour
     [SerializeField]
     private float minHealthY = -0.72f, maxHealthY = -0.2f;
 
-    [SerializeField] private int healthSpawnProbability = 7;
+    [SerializeField] private int healthSpawnProbability = 97;
 
     private void Awake()
     {
         mainCam = Camera.main;
+
+        scoreCounter = FindObjectOfType<ScoreCounter>();
+
         InitializeObstacles();
     }
 
     private void Update()
     {
         HandleObstacleSpawning();
+
+        if (scoreCounter.GetScore() > increaseSpeed_After)
+        {
+            increaseSpeed_After += 20f;
+
+            minSpawnWaitTime -= 0.2f;
+            maxSpawnWaitTime -= 0.2f;
+
+            if (minSpawnWaitTime <= 0f)
+                minSpawnWaitTime = 0f;
+            if (maxSpawnWaitTime <= 0.5f)
+                maxSpawnWaitTime = 0.5f;
+        }
+
     }
 
     void InitializeObstacles()
@@ -169,6 +190,7 @@ public class ObstacleSpawnerPool : MonoBehaviour
 
         obstacleSpawnPos.x = mainCam.transform.position.x + 3f;
 
+
         switch (obstacleToSpawn)
         {
             case 0:
@@ -230,7 +252,7 @@ public class ObstacleSpawnerPool : MonoBehaviour
 
     void SpawnHealthInGame()
     {
-        if (Random.Range(0, 10) > healthSpawnProbability)
+        if (Random.Range(0, 100) > healthSpawnProbability)
         {
             for (int i = 0; i < healthPool.Count; i++)
             {

@@ -6,11 +6,27 @@ public class EnemyAnimation : MonoBehaviour
 {
     private Animator anim;
 
+    private ScoreCounter scoreCounter;
+
     [SerializeField] private GameObject damageCollider;
+
+    private float animSpeedThreshold = 0.2f, increaseSpeed_After = 20f;
 
     private void Awake()
     {
         anim = GetComponent<Animator>();
+
+        scoreCounter = FindObjectOfType<ScoreCounter>();
+    }
+
+    private void Update()
+    {
+        if (scoreCounter.GetScore() > increaseSpeed_After)
+        {
+            increaseSpeed_After += 20f;
+            anim.speed -= animSpeedThreshold;
+
+        }
     }
 
     public void PlayAttack()
